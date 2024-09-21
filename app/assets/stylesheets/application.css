@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+.sorted-asc {
+    background-color: #d1e7dd; /* Light green for ascending header */
+    color: #0f5132; /* Dark green text for header */
+}
+
+.sorted-desc {
+    background-color: #f8d7da; /* Light red for descending header */
+    color: #721c24; /* Dark red text for header */
+}
+
+.highlight {
+    background-color: rgba(167, 246, 255, 0.742); /* Light color for sorted column */
+}

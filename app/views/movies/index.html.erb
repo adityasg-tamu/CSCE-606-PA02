@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Movies" %>
+
+<h1>Movies</h1>
+
+
+<table>
+    <thead>
+        <tr>
+      <th class="<%= 'sorted-asc' if @sort_column == 'title' && @sort_order == 'asc' %>
+                  <%= 'sorted-desc' if @sort_column == 'title' && @sort_order == 'desc' %>">
+        <%= link_to "Title", movies_path(sort_column: "title", order: @sort_order == "asc" ? "desc" : "asc") %>
+        <%= @sort_column == "title" ? (@sort_order == "asc" ? "🔼" : "🔽") : "" %>
+      </th>
+      <th class="<%= 'sorted-asc' if @sort_column == 'rating' && @sort_order == 'asc' %>
+                  <%= 'sorted-desc' if @sort_column == 'rating' && @sort_order == 'desc' %>">
+        <%= link_to "Rating", movies_path(sort_column: "rating", order: @sort_order == "asc" ? "desc" : "asc") %>
+        <%= @sort_column == "rating" ? (@sort_order == "asc" ? "🔼" : "🔽") : "" %>
+      </th>
+      <th class="<%= 'sorted-asc' if @sort_column == 'release_date' && @sort_order == 'asc' %>
+                  <%= 'sorted-desc' if @sort_column == 'release_date' && @sort_order == 'desc' %>">
+        <%= link_to "Release Date", movies_path(sort_column: "release_date", order: @sort_order == "asc" ? "desc" : "asc") %>
+        <%= @sort_column == "release_date" ? (@sort_order == "asc" ? "🔼" : "🔽") : "" %>
+      </th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <%= render movie %>
+      <% end %>
+    </tbody>
+</table>
+
+<%= link_to "New movie", new_movie_path %>
