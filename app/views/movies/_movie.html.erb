@@ -1,5 +1,5 @@
 <tr>
-    <td class="<%= 'highlight' if @sort_column == 'title' %>"><%=movie.title %></td>
+    <td class="<%= 'highlight' if @sort_column == 'title' %>"><%= link_to movie.title, movie_path(movie.id) %></td>
     <td class="<%= 'highlight' if @sort_column == 'rating' %>"><%=movie.rating%></td>
     <td class="<%= 'highlight' if @sort_column == 'release_date' %>"><%=movie.release_date%></td>
 </tr>

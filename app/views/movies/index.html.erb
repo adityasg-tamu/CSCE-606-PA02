@@ -5,21 +5,21 @@
 <h1>Movies</h1>
 
 
-<table>
+<table class="movies_table">
     <thead>
         <tr>
-      <th class="<%= 'sorted-asc' if @sort_column == 'title' && @sort_order == 'asc' %>
-                  <%= 'sorted-desc' if @sort_column == 'title' && @sort_order == 'desc' %>">
+      <th class="<%= "ascending" if @sort_column == "title" && @sort_order == "asc" %>
+                  <%= "descending" if @sort_column == "title" && @sort_order == "desc" %>">
         <%= link_to "Title", movies_path(sort_column: "title", order: @sort_order == "asc" ? "desc" : "asc") %>
         <%= @sort_column == "title" ? (@sort_order == "asc" ? "🔼" : "🔽") : "" %>
       </th>
-      <th class="<%= 'sorted-asc' if @sort_column == 'rating' && @sort_order == 'asc' %>
-                  <%= 'sorted-desc' if @sort_column == 'rating' && @sort_order == 'desc' %>">
+      <th class="<%= "ascending" if @sort_column == "rating" && @sort_order == "asc" %>
+                  <%= "descending" if @sort_column == "rating" && @sort_order == "desc" %>">
         <%= link_to "Rating", movies_path(sort_column: "rating", order: @sort_order == "asc" ? "desc" : "asc") %>
         <%= @sort_column == "rating" ? (@sort_order == "asc" ? "🔼" : "🔽") : "" %>
       </th>
-      <th class="<%= 'sorted-asc' if @sort_column == 'release_date' && @sort_order == 'asc' %>
-                  <%= 'sorted-desc' if @sort_column == 'release_date' && @sort_order == 'desc' %>">
+      <th class="<%= "ascending" if @sort_column == "release_date" && @sort_order == "asc" %>
+                  <%= "descending" if @sort_column == "release_date" && @sort_order == "desc" %>">
         <%= link_to "Release Date", movies_path(sort_column: "release_date", order: @sort_order == "asc" ? "desc" : "asc") %>
         <%= @sort_column == "release_date" ? (@sort_order == "asc" ? "🔼" : "🔽") : "" %>
       </th>

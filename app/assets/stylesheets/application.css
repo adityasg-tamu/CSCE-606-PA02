@@ -13,16 +13,47 @@
  *= require_tree .
  *= require_self
  */
-.sorted-asc {
-    background-color: #d1e7dd; /* Light green for ascending header */
-    color: #0f5132; /* Dark green text for header */
+ body{
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    text-align: center ;
+ }
+
+ h1{
+    color: #ffffff;
+    text-shadow: 
+        4px 4px 0 black, 
+        -4px -4px 0 black,
+        4px -4px 0 black,
+        -4px 4px 0 black;
+ }
+.ascending {
+  background-color: #00f386;
 }
 
-.sorted-desc {
-    background-color: #f8d7da; /* Light red for descending header */
-    color: #721c24; /* Dark red text for header */
+.descending {
+  background-color: #ff4a59;
 }
 
 .highlight {
-    background-color: rgba(167, 246, 255, 0.742); /* Light color for sorted column */
+  background-color: rgba(155, 155, 155, 0.742);
+}
+
+.movies-table {
+  width: 80%;
+  border: 0.1em solid;
+  border-color: black;
+}
+
+.movies_table th,
+.movies_table td {
+  padding: 12px 15px;
+  border: 0.1em solid;
+  border-color: black;
+}
+
+
+th a {
+    color: rgb(0, 0, 0);         /* Set link color to white */
+    text-decoration: none; /* Remove underline */
 }
